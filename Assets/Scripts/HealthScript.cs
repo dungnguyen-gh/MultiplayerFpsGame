@@ -15,6 +15,8 @@ public class HealthScript : NetworkBehaviour
     [SerializeField] CharacterController controller = null;
 
     Vector3 startPosition = Vector3.zero;
+    [SerializeField] GameObject roundOverPanel = null;
+    [SerializeField] TMP_Text winnerText = null;
     void Start()
     {
         if (!isLocalPlayer) return;
@@ -51,7 +53,13 @@ public class HealthScript : NetworkBehaviour
         healthSlider.value = healthValue;
         if (newHealth <= 0)
         {
+
+            controller.enabled = false;
+            movementScript.enabled = false;
+
             print("die");
+            roundOverPanel.SetActive(true);
+            winnerText.text = "You lost";
 
             afterDeathCamera.SetActive(true);
             mainFpsCamera.SetActive(false);
@@ -69,8 +77,9 @@ public class HealthScript : NetworkBehaviour
     }
     public void BeginNewRound()
     {
+        roundOverPanel.SetActive(false);
         NewRoundCall();
-        
+
         movementScript.enabled = false;
         controller.enabled = false;
 

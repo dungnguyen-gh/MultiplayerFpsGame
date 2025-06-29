@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mirror;
 using Unity.Mathematics;
+using TMPro;
 
 public class FireScript : NetworkBehaviour
 {
@@ -10,6 +11,9 @@ public class FireScript : NetworkBehaviour
     [SerializeField] HealthScript healthScript = null;
     private float lastShotTime = 0f;
     private float waitForSecondsBetweenShots = 0.2f;
+
+    [SerializeField] GameObject roundOverPanel = null;
+    [SerializeField] TMP_Text winnerText = null;
 
     
     void Update()
@@ -29,6 +33,8 @@ public class FireScript : NetworkBehaviour
                     {
                         if (playerHealthScript.GetHealth() - 25 <= 0)
                         {
+                            roundOverPanel.SetActive(true);
+                            winnerText.text = "You win";
                             RoundOver();
                         }
                         if (playerHealthScript.GetHealth() <= 0)
