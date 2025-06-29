@@ -7,11 +7,14 @@ public class FireScript : NetworkBehaviour
     [SerializeField] GameObject gameCamera = null;
     [SerializeField] LayerMask playerMask = new LayerMask();
     [SerializeField] GameObject damageTextParent = null;
-
+    [SerializeField] HealthScript healthScript = null;
     private float lastShotTime = 0f;
     private float waitForSecondsBetweenShots = 0.2f;
+
+    
     void Update()
     {
+        if (!isLocalPlayer) { return; }
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (lastShotTime == 0 ||
@@ -24,7 +27,14 @@ public class FireScript : NetworkBehaviour
                     if (hit.collider.TryGetComponent<HealthScript>
                     (out HealthScript playerHealthScript))
                     {
-                        if (playerHealthScript.GetHealth() <= 0) return;
+                        if (playerHealthScript.GetHealth() - 25 <= 0)
+                        {
+                            RoundOver();
+                        }
+                        if (playerHealthScript.GetHealth() <= 0)
+                        {
+                            return;
+                        }
 
                         GameObject newTextParent = Instantiate(damageTextParent, hit.point, Quaternion.identity);
                         newTextParent.GetComponentInChildren<DamageTextScript>().GetCalled(25, gameCamera);
@@ -38,7 +48,7 @@ public class FireScript : NetworkBehaviour
                     }
                 }
             }
-            
+
         }
     }
 
@@ -52,5 +62,14 @@ public class FireScript : NetworkBehaviour
     private void ServerHit(float damage, HealthScript playerHealthScript)
     {
         playerHealthScript.GetDamage(damage);
+    }
+
+    void RoundOver()
+    {
+        Invoke(nameof(BeginNewRound), 5f);
+    }
+    void BeginNewRound()
+    {
+        healthScript.BeginNewRound();
     }
 }
