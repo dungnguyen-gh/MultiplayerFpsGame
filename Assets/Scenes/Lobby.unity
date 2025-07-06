@@ -560,7 +560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216652850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738756664}
+        m_TargetAssemblyTypeName: FpsNetworkManager, Assembly-CSharp
+        m_MethodName: HostLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &216652850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +825,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281209337}
   m_CullTransparentMesh: 1
+--- !u!1001 &329723096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: lobbyUI
+      value: 
+      objectReference: {fileID: 552871276}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: PlayerGO
+      value: 
+      objectReference: {fileID: 119088089111883301, guid: d2de0c647940e4ef893bd2f4c6470ac6, type: 3}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: transport
+      value: 
+      objectReference: {fileID: 1738756665}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: landingPage
+      value: 
+      objectReference: {fileID: 1310714488}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: onlineScene
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: addressField
+      value: 
+      objectReference: {fileID: 345472555}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: offlineScene
+      value: Assets/Scenes/Lobby.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 3885235264621747222, guid: 65698841480ed418385a404397c97f19, type: 3}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: maxConnections
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: startGameButton
+      value: 
+      objectReference: {fileID: 1050090568}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: enterAddressPanel
+      value: 
+      objectReference: {fileID: 281209337}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: headlessStartMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: playerSpawnMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: 'spawnPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 119088089111883301, guid: d2de0c647940e4ef893bd2f4c6470ac6, type: 3}
+    - target: {fileID: 6445244900542725554, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_Name
+      value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826245427917023942, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
 --- !u!1 &345472553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1569,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 738639547}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738756664}
+        m_TargetAssemblyTypeName: FpsNetworkManager, Assembly-CSharp
+        m_MethodName: JoinButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &738639547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,7 +1714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050090569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1633,7 +1778,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1050090571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738756664}
+        m_TargetAssemblyTypeName: FpsNetworkManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1050090571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2162,7 +2319,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1207284182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738756664}
+        m_TargetAssemblyTypeName: FpsNetworkManager, Assembly-CSharp
+        m_MethodName: LeaveLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1207284182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,6 +2486,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475706493}
   m_CullTransparentMesh: 1
+--- !u!114 &1738756664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1639199309633256925, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+  m_PrefabInstance: {fileID: 329723096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005a502bf62d64202a54d558638163b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1738756665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5671110075094901336, guid: b7f89bd197281459e9cb601d0ae6b87f, type: 3}
+  m_PrefabInstance: {fileID: 329723096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748614866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,7 +3447,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2089387497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738756664}
+        m_TargetAssemblyTypeName: FpsNetworkManager, Assembly-CSharp
+        m_MethodName: JoinLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089387497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3303,3 +3506,4 @@ SceneRoots:
   - {fileID: 108201139}
   - {fileID: 211499661}
   - {fileID: 2077521362}
+  - {fileID: 329723096}
