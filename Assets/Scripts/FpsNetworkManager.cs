@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Steamworks;
+using Edgegap;
 
 public class FpsNetworkManager : NetworkManager
 {
@@ -21,6 +22,7 @@ public class FpsNetworkManager : NetworkManager
     protected Callback<LobbyCreated_t> lobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
     protected Callback<LobbyEnter_t> lobbyEntered;
+    public static CSteamID LobbyID;
 
     void Start()
     {
@@ -33,6 +35,12 @@ public class FpsNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
         base.OnServerAddPlayer(conn);
+
+        CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbyID, numPlayers - 1);
+
+        var playerScript = conn.identity.GetComponent<PlayerScript>();
+
+        playerScript.SetSteamID(steamID.m_SteamID);
 
         PlayerScript playerStartPrefab = conn.identity.GetComponent<PlayerScript>();
         playersList.Add(playerStartPrefab);
@@ -82,10 +90,15 @@ public class FpsNetworkManager : NetworkManager
     public override void OnClientDisconnect()
     {
         base.OnClientDisconnect();
-
+        SceneManager.LoadScene(0);
         landingPage.SetActive(true);
         lobbyUI.SetActive(false);
         enterAddressPanel.SetActive(false);
+    }
+    public override void OnStopHost()
+    {
+        base.OnStopHost();
+        SceneManager.LoadScene(0);
     }
     public void LeaveLobby()
     {
@@ -113,6 +126,7 @@ public class FpsNetworkManager : NetworkManager
                 var connectionTC = player.connectionToClient;
                 GameObject playerP = Instantiate(PlayerGO, GetStartPosition().transform.position, Quaternion.identity);
                 NetworkServer.ReplacePlayerForConnection(connectionTC, playerP);
+                NetworkServer.Destroy(player.gameObject);
             }
         }
     }
@@ -134,6 +148,8 @@ public class FpsNetworkManager : NetworkManager
     }
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
+        LobbyID = new CSteamID(callback.m_ulSteamIDLobby);
+
         if (NetworkServer.active) { return; }
         string HostIP = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "HostIP");
 
@@ -141,5 +157,10 @@ public class FpsNetworkManager : NetworkManager
         NetworkManager.singleton.StartClient();
 
         landingPage.SetActive(false);
-    } 
+    }
+    public void CloseAddressPanel()
+    {
+        enterAddressPanel.SetActive(false);
+        landingPage.SetActive(true);
+    }
 }

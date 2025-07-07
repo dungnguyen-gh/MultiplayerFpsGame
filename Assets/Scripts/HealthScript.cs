@@ -17,6 +17,7 @@ public class HealthScript : NetworkBehaviour
     Vector3 startPosition = Vector3.zero;
     [SerializeField] GameObject roundOverPanel = null;
     [SerializeField] TMP_Text winnerText = null;
+    [SerializeField] FireScript fireScript = null;
     void Start()
     {
         if (!isLocalPlayer) return;
@@ -56,7 +57,7 @@ public class HealthScript : NetworkBehaviour
 
             controller.enabled = false;
             movementScript.enabled = false;
-
+            fireScript.enabled = false;
             print("die");
             roundOverPanel.SetActive(true);
             winnerText.text = "You lost";
@@ -77,6 +78,7 @@ public class HealthScript : NetworkBehaviour
     }
     public void BeginNewRound()
     {
+        fireScript.enabled = true;
         roundOverPanel.SetActive(false);
         NewRoundCall();
 

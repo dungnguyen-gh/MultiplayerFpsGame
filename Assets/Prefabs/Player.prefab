@@ -316,6 +316,7 @@ MonoBehaviour:
   controller: {fileID: -1019001864594693778}
   roundOverPanel: {fileID: 6463136789322923983}
   winnerText: {fileID: 1214681333758666985}
+  fireScript: {fileID: 1119792931496879139}
 --- !u!114 &1119792931496879139
 MonoBehaviour:
   m_ObjectHideFlags: 0
